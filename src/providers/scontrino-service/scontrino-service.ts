@@ -43,7 +43,7 @@ export class ScontrinoServiceProvider {
     this.url = 'https://api.edistar.com/sime/ricercaMatricola/'
 
     let dati = new FormData();
-    dati.append('matricola','481930190')
+    dati.append('matricola','4819301901')
 
     return this.http.post(this.url,dati)
     //.do(this.logMethod)
