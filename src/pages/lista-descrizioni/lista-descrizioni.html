@@ -7,12 +7,35 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>listaDescrizioni</ion-title>
+    <ion-title>Descrizione</ion-title>
   </ion-navbar>
 
 </ion-header>
+<ion-content padding >
 
+  <ion-item *ngIf="completed">
+    <h1 *ngIf="success" style="color:green; text-align: center; ">
+      <b >{{ris.risultato}}</b>
+    </h1>
+    <h1 *ngIf="!success" style="color:red; text-align: center; ">
+      <b>{{ris.risultato}}</b>
+    </h1>
+  </ion-item>
 
-<ion-content padding>
+  <ion-card *ngIf="completed">
+
+    <ion-card-header >
+      Descrizione
+    </ion-card-header>
+
+    <ion-card-content *ngIf="success">
+      <ion-item>
+        {{ris.descrizione}}
+        
+      </ion-item>
+    </ion-card-content>
+
+  </ion-card>
+
 
 </ion-content>

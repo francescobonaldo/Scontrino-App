@@ -25,11 +25,13 @@ export class ListaCanzoniPage {
   }
 
   canzoni_array = Array<Canzone>()
-  completed: boolean = false;
+  completed: boolean;
 
 
   ionViewDidLoad() {
     this.canzoni_array = []
+    this.completed = false
+    this.getData()
   }
 
   getData(){
