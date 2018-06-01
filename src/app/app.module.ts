@@ -13,13 +13,18 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ScontrinoServiceProvider } from '../providers/scontrino-service/scontrino-service';
 
+import { ListaCanzoniPage } from '../pages/lista-canzoni/lista-canzoni';
+import { ListaDescrizioniPage } from '../pages/lista-descrizioni/lista-descrizioni';
+
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ListaCanzoniPage,
+    ListaDescrizioniPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,9 @@ import { ScontrinoServiceProvider } from '../providers/scontrino-service/scontri
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ListaCanzoniPage,
+    ListaDescrizioniPage
   ],
   providers: [
     StatusBar,

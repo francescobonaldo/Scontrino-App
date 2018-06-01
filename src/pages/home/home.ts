@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import { ScontrinoServiceProvider } from '../../providers/scontrino-service/scontrino-service';
 import { Canzone } from '../../pages/canzone';
 import { Risultato } from '../../pages/risultato';
+import { ListaCanzoniPage } from '../../pages/lista-canzoni/lista-canzoni';
+import { ListaDescrizioniPage } from '../../pages/lista-descrizioni/lista-descrizioni';
 
 @Component({
   selector: 'page-home',
@@ -11,8 +13,6 @@ import { Risultato } from '../../pages/risultato';
 export class HomePage {
 
   data: any
-  public d = (<any>this.data)
-  canzoni_array = Array<Canzone>()
   public ris: Risultato = null
 
   completed: boolean = false;
@@ -21,29 +21,10 @@ export class HomePage {
     public navCtrl: NavController,
     public scontrinoService: ScontrinoServiceProvider
   ) {
-      this.canzoni_array = []
-      //this.getData();
       this.postData();
   }
   
-  getData(){
-    this.scontrinoService.getData().subscribe(d=>{
-      let array_canzoni = d.results.trackmatches.track
-      this.data = array_canzoni
 
-      array_canzoni.forEach(song => {
-        this.canzoni_array.push({
-          nome_canzone: song.name,
-          artista_canzone: song.artist,
-          url_canzone: song.url
-        })
-      });
-
-      this.data = this.canzoni_array
-      console.log(this.data)
-      this.completed = true;
-    })
-  }
 
   postData(){
     this.scontrinoService.postData().subscribe(data=>{
@@ -66,5 +47,12 @@ export class HomePage {
       console.log(this.ris)
     })
 
+  }
+
+  goToCanzoniPage(){
+    this.navCtrl.push(ListaCanzoniPage)
+  }
+  goToDescrizioniPage(){
+    this.navCtrl.push(ListaDescrizioniPage)
   }
 }
