@@ -3,12 +3,25 @@
     <ion-title>Scontrino</ion-title>
   </ion-navbar>
 </ion-header>
+<!-- 
+<button ion-button icon-left>
+  <ion-icon name="home"></ion-icon>
+  Left Icon
+</button> -->
 
 
 <ion-content padding>
   <h1>Scontrino app</h1>
-  <button ion-button block color="default" large (click)= "goToCanzoniPage()">API LAST FM <ion-icon name='call'></ion-icon></button>
+  <button ion-button icon-right block large color="default" (click)= "goToCanzoniPage()">
+    API LAST FM 
+    <ion-icon name='musical-notes'></ion-icon> 
+  </button>
   <br>
-  <button ion-button block color="danger" large (click)= "goToDescrizioniPage()">API EDISTAR <ion-icon name='musical-notes'></ion-icon></button>  
+  
+  <button ion-button icon-right block large color="danger" (click)= "goToDescrizioniPage()">
+    API EDISTAR 
+    <ion-icon name='call'></ion-icon>
+  </button>  
+  <br>
  
 </ion-content>

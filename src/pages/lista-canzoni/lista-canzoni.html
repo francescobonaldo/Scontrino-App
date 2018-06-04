@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>listaCanzoni</ion-title>
+    <ion-title>Lista canzoni "Casa de papel"</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,10 +15,24 @@
 
 <ion-content padding>
 
-  <ion-list *ngIf="completed">
-    <ion-item  *ngFor="let canzone of data">
-      {{canzone.nome_canzone +" "+ canzone.artista_canzone}}      
-    </ion-item>
+<ion-list *ngIf=completed>
+
+  <ion-card *ngFor="let canzone of canzoni_array">
+
+      <ion-card-header >
+          {{canzone.nome_canzone}}
+      </ion-card-header>
+  
+      <ion-card-content>
+        <ion-item>
+          {{canzone.artista_canzone}}
+        </ion-item>
+        <ion-item>
+          <a href={{canzone.url_canzone}}>{{canzone.url_canzone}}</a>
+        </ion-item>
+      </ion-card-content>
+  
+    </ion-card>
   </ion-list>
 
 </ion-content>
